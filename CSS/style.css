@@ -1,0 +1,148 @@
+body {
+    background-color: black;
+
+}
+
+nav {
+    height: 100vh;
+    position: fixed;
+    z-index: 999999999999;
+}
+
+.logo {
+    top: 0;
+    bottom: 0;
+}
+
+.nav {
+    top: 0;
+    bottom: 0%;
+    left: -10%;
+    display: none;
+}
+
+.nav-link {
+    color: #f9f6f6 !important;
+
+}
+
+nav .tabes,
+nav i {
+    cursor: pointer;
+}
+
+.exit {
+    display: none;
+
+}
+
+/* section */
+#menu,
+#Search,
+#Instructions,
+#Area,
+#Ingredients,
+#Contact,
+#Categories,
+#CategoriesMeal {
+    display: none;
+
+    width: 80%;
+    margin: auto;
+}
+
+#Instructions li {
+    display: inline-block;
+    background-color: bisque;
+    border-radius: 3px;
+    color: rgb(18, 8, 8);
+    font-weight: lighter;
+    padding: 5px;
+    font-size: small;
+}
+
+#Instructions a {
+    border: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+.lyear {
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    bottom: 0%;
+    right: 0;
+    overflow: hidden;
+    background-color: rgba(240, 248, 255, 0.5);
+    width: 90%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    transition: all 1s;
+    cursor: pointer;
+
+
+
+}
+
+.col-md-3 {
+    margin-top: 50px;
+}
+
+.col-md-3:hover .lyear {
+    top: 0%;
+}
+
+
+#Area i {
+    color: #e65a50ab;
+}
+
+#Area .col-md-3 {
+    background-color: rgb(6, 4, 4);
+}
+
+#Ingredients i {
+    color: #9ee650ab;
+}
+
+#contact {
+    text-align: center;
+    padding-top: 10%;
+    color: white;
+    opacity: 80%;
+}
+
+#contact input {
+    box-shadow: 0 .5rem 1rem rgba(255, 255, 255, 0.422) !important;
+    border: none;
+    border-bottom: 1px snow solid;
+    margin: 2%;
+    text-align: center;
+    color: white !important;
+    opacity: 100% !important;
+
+}
+
+#Ingredients .col-md-3 ,#Area .col-md-3{
+    cursor: pointer;
+}
+
+#Search input {
+    border: none;
+    border-bottom: 1px snow solid;
+    border-radius: 0;
+    margin: 2%;
+   
+    color: white !important;
+  
+    /* opacity: 100% !important; */
+}
+#Contact input{
+    color: white !important;
+
+}
+#Contact .col-md-6{
+    margin-bottom:40px ;
+}
