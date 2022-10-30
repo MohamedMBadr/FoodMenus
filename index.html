@@ -18,16 +18,16 @@
     <div class="nav flex-column justify-content-between position-absolute ">
 
 
-      <div class="text-start">
+      <div class="text-start position-relative">
         <a class="nav-link ps-4 Search" href="#Search">Search</a>
-        <a class="nav-link ps-4 Categories " href="#Duration">Categories</a>
+        <a class="nav-link ps-4 Categories " href="#Categories">Categories</a>
         <a class="nav-link ps-4  Area" href="#Area">Area</a>
         <a class="nav-link ps-4 Ingredients " href="#Ingredients">Ingredients</a>
         <a class="nav-link ps-4  Contact" href="#Contact">Contact Us
         </a>
 
       </div>
-      <div class="py-3">
+      <div class="py-3 icon-cobyright  position-absolute">
         <div class="  d-inline-block ">
           <i class=" px-2 fa-brands fa-facebook"></i>
           <i class=" px-2 fa-brands fa-twitter"></i>
@@ -60,6 +60,12 @@
 
     </div>
   </nav>
+  <div class="loading">
+  <div class="spinner">
+    <div class="dot1"></div>
+    <div class="dot2"></div>
+  </div>
+</div>
   <section id="Search">
     <div class="container py-5">
       <div class="row w-75 m-auto">
@@ -68,7 +74,7 @@
 
         </div>
         <div class="col-md-6 ">
-          <input type="text" class="form-control bg-black shadow-lg SearchChar" placeholder="search by first letter">
+          <input type="text" class="form-control bg-black shadow-lg SearchChar" maxlength="1" placeholder="search by first letter">
 
         </div>
       </div>
@@ -97,21 +103,7 @@
       </div>
     </div>
   </section>
-  <section id="Search">
-    <div class="container py-5">
-      <div class="row w-75 m-auto">
-        <div class="col-md-6">
-          <input type="text" class="form-control bg-black shadow-lg SearchMeal" placeholder="search by Name">
 
-        </div>
-        <div class="col-md-6 ">
-          <input type="text" class="form-control bg-black shadow-lg" placeholder="search by first letter">
-
-        </div>
-      </div>
-    </div>
-
-  </section>
 
   <section id="Instructions" class="py-5">
     <div class="container text-white pt-5 ps-5">
@@ -187,42 +179,51 @@
 
   <section id="Contact" class="text-center ">
     <h2 class="py-2 text-light">ContacUs...</h2>
-    <div class="container ">
+    <div class="container gx-2">
       <div class="row w-75 m-auto text-light  ">
-        <div class="col-md-6 ">
-          <input type="text" class="form-control bg-black shadow-lg position-relative name" placeholder="Enter Your Name" >
-          <div class="bg-danger name-v position-absolute"></div>
+        <div class="col-md-6 position-relative ">
+          <input type="text" class="form-control bg-black shadow-lg  name" placeholder="Enter Your Name" >
+          <div class="bg-danger bg-opacity-25 py-1 start-0 end-0 text-center name-v d-none position-absolute">
+            Special Characters and Numbers not allowed
+          </div>
 
         </div>
-        <div class="col-md-6  ">
-          <input type="email" class="form-control position-relative bg-black shadow-lg email" placeholder="Enter Your Email">
-          <div class="bg-danger email-v position-absolute"></div>
-
-
-        </div>
-        <div class="col-md-6">
-          <input type="number" class="form-control position-relative bg-black shadow-lg number" placeholder="Enter Your number">
-          <div class="bg-danger number-v position-absolute"></div>
-
-        </div>
-        <div class="col-md-6">
-          <input type="number" class="form-control position-relative bg-black shadow-lg age" placeholder="Enter Your Age">
+        <div class="col-md-6  position-relative">
+          <input type="email" class="form-control  bg-black shadow-lg email" placeholder="Enter Your Email">
+          <div class="bg-danger  bg-opacity-25 py-1 start-0 end-0 text-center email-v d-none position-absolute">
+            Enter valid email. *Ex: xxx@yyy.zzz
+          </div>
 
 
         </div>
-        <div class="col-md-6">
-          <input type="password" class="form-control position-relative bg-black shadow-lg password" placeholder="Enter password">
-          <div class="bg-danger password-v position-absolute"></div>
+        <div class="col-md-6 position-relative">
+          <input type="number" class="form-control  bg-black shadow-lg number" placeholder="Enter Your number">
+          <div class="bg-danger  bg-opacity-25 py-1 start-0 end-0 text-center number-v d-none position-absolute">Enter valid Phone Number</div>
 
         </div>
-        <div class="col-md-6">
-          <input type="password" class="form-control position-relative bg-black shadow-lg repassword" placeholder="Enter RePassword">
-          <div class="bg-danger repassword-v position-absolute"></div>
+        <div class="col-md-6 position-relative" >
+          <input type="number" class="form-control bg-black shadow-lg age" placeholder="Enter Your Age">
+
+
+        </div>
+        <div class="col-md-6 position-relative">
+          <input type="password" class="form-control  bg-black shadow-lg password" placeholder="Enter password">
+          <div class="bg-danger  bg-opacity-25 py-1 start-0 end-0 text-center password-v d-none position-absolute">
+            Enter valid password *Minimum eight characters, at least one letter and one number:*
+          </div>
+
+        </div>
+        <div class="col-md-6 position-relative">
+          <input type="password" class="form-control  bg-black shadow-lg repassword" placeholder="Enter RePassword">
+          <div class="bg-danger  bg-opacity-25 py-1 start-0 end-0 text-center repassword-v d-none position-absolute"> 
+            Enter valid Repassword and equal password
+          </div>
 
         </div>
       </div>
-      <button class="btn btn-outline-danger my-2 Submit ">Submit</button>
-      <div class="valid">
+      <button class="btn btn-outline-danger my-2   Submit ">Submit</button>
+      <div class="valid w-50 m-auto text-light d-none bg-danger py-3 ">
+        please enter a valid data
       </div>
 
     </div>

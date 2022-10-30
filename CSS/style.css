@@ -2,7 +2,65 @@ body {
     background-color: black;
 
 }
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
 
+}
+.spinner {
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+  }
+  
+  .dot1, .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: rgb(74, 69, 69);
+    border-radius: 100%;
+    
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+  @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+  
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
 nav {
     height: 100vh;
     position: fixed;
@@ -18,13 +76,15 @@ nav {
     top: 0;
     bottom: 0%;
     left: -10%;
-    display: none;
+    display: none; 
+    
 }
 
 .nav-link {
     color: #f9f6f6 !important;
 
 }
+
 
 nav .tabes,
 nav i {
@@ -35,7 +95,9 @@ nav i {
     display: none;
 
 }
-
+.icon-cobyright {
+top: 70%;
+}
 /* section */
 #menu,
 #Search,
@@ -145,4 +207,32 @@ nav i {
 }
 #Contact .col-md-6{
     margin-bottom:40px ;
+}
+
+
+
+@media screen and (max-width :600px){
+    .container {
+
+   margin-left: 10%;
+    }
+     
+}
+
+@media screen and (min-width:601px) and (max-width :768px) {
+    .container {
+
+        margin-left: 10%;
+         }
+
+
+
+}
+@media screen and (min-width:769px) and (max-width :992px) {
+
+    .container {
+
+        margin-left: 10%;
+         }
+
 }
