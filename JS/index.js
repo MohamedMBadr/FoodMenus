@@ -214,6 +214,8 @@ $('.loading').fadeOut(1000);
     let api = await apiData.json();
     let Category = api.categories;
 
+
+    
     let CategoryContainer = ``;
     for (let i = 0; i < Category.length; i++) {
       CategoryContainer += ` <div class="col-md-3 position-relative " Category=${Category[i].strCategory}>
@@ -227,6 +229,17 @@ $('.loading').fadeOut(1000);
           </div>`
 
     }
+
+    $('#Area').css('display', 'none')
+    $('#menu').css('display', 'none')
+    $('#Categories').css('display', 'block')
+    $('#CategoriesMeal').css('display', 'none')
+ 
+    $('#Contact').css('display', 'none')
+    $('#Instructions').css('display', 'none')
+
+    $('#Search').css('display', 'none')
+
 
     $('#Categories .row').html(CategoryContainer);
 
@@ -261,6 +274,17 @@ $('.loading').fadeOut(1000);
   // Display Area
   function areaDisplay(areaIngredients) {
 
+
+    $('#Area').css('display', 'block')
+    $('#menu').css('display', 'none')
+    $('#Categories').css('display', 'none')
+    $('#CategoriesMeal').css('display', 'none')
+ 
+    $('#Contact').css('display', 'none')
+    $('#Instructions').css('display', 'none')
+
+    $('#Search').css('display', 'none')
+    
     let areaContainer = ``;
     for (let i = 0; i < areaIngredients.length; i++) {
 
@@ -287,6 +311,16 @@ $('.loading').fadeOut(1000);
 
   // Display ingredients
   function ingredientsDisplay(areaIngredients) {
+
+    $('#ingredients').css('display', 'block')
+    $('#menu').css('display', 'none')
+    $('#Categories').css('display', 'none')
+    $('#CategoriesMeal').css('display', 'none')
+ 
+    $('#Contact').css('display', 'none')
+    $('#Instructions').css('display', 'none')
+
+    $('#Search').css('display', 'none')
 
     let ingredientContainer = ``;
     for (let i = 0; i < 20; i++) {
