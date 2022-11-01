@@ -467,6 +467,8 @@ $(document).ready(function () {
       $('#menu').css('display', 'none')
 
       $('#Contact').css('display', 'none')
+      $('#Categories').css('display', 'none')
+
 
 
       $('#Area').css('display', 'none')
