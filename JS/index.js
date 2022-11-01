@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-$('.loading').fadeOut(1000);
+  $('.loading').fadeOut(1000);
   // nav Bar 
   $('.tabes').click(function () {
 
@@ -47,8 +47,9 @@ $('.loading').fadeOut(1000);
     $('#Area').css('display', 'none')
     $('#menu').css('display', 'block')
     $('#Ingredients').css('display', 'none')
-    $('#CategoriesMeal').css('display', 'none')
- 
+    $('#Categories').css('display', 'none')
+
+
     $('#Contact').css('display', 'none')
     $('#Instructions').css('display', 'none')
     $('#Contact').css('display', 'none')
@@ -104,9 +105,8 @@ $('.loading').fadeOut(1000);
     // console.log(selectedMeal.strMeal);
     $('#Area').css('display', 'none')
     $('#menu').css('display', 'none')
-    $('#Ingredients').css('display', 'block')
-    $('#CategoriesMeal').css('display', 'none')
- 
+    $('#Ingredients').css('display', 'none')
+
     $('#Contact').css('display', 'none')
     $('#Instructions').css('display', 'block')
 
@@ -215,7 +215,7 @@ $('.loading').fadeOut(1000);
     let Category = api.categories;
 
 
-    
+
     let CategoryContainer = ``;
     for (let i = 0; i < Category.length; i++) {
       CategoryContainer += ` <div class="col-md-3 position-relative " Category=${Category[i].strCategory}>
@@ -233,8 +233,7 @@ $('.loading').fadeOut(1000);
     $('#Area').css('display', 'none')
     $('#menu').css('display', 'none')
     $('#Categories').css('display', 'block')
-    $('#CategoriesMeal').css('display', 'none')
- 
+
     $('#Contact').css('display', 'none')
     $('#Instructions').css('display', 'none')
 
@@ -278,13 +277,12 @@ $('.loading').fadeOut(1000);
     $('#Area').css('display', 'block')
     $('#menu').css('display', 'none')
     $('#Categories').css('display', 'none')
-    $('#CategoriesMeal').css('display', 'none')
- 
+
     $('#Contact').css('display', 'none')
     $('#Instructions').css('display', 'none')
 
     $('#Search').css('display', 'none')
-    
+
     let areaContainer = ``;
     for (let i = 0; i < areaIngredients.length; i++) {
 
@@ -315,8 +313,7 @@ $('.loading').fadeOut(1000);
     $('#ingredients').css('display', 'block')
     $('#menu').css('display', 'none')
     $('#Categories').css('display', 'none')
-    $('#CategoriesMeal').css('display', 'none')
- 
+
     $('#Contact').css('display', 'none')
     $('#Instructions').css('display', 'none')
 
@@ -427,7 +424,6 @@ $('.loading').fadeOut(1000);
       areaIngredientsSelector('i');
       $('#menu').css('display', 'none')
       $('#Ingredients').css('display', 'block')
-      $('#CategoriesMeal').css('display', 'none')
       $('#Area').css('display', 'none')
       $('#Contact').css('display', 'none')
       $('#Instructions').css('display', 'none')
@@ -439,12 +435,11 @@ $('.loading').fadeOut(1000);
     }
     else if (chosenLink == '#Area') {
       areaIngredientsSelector('a');
-     
+
       $('#Area').css('display', 'block')
       $('#menu').css('display', 'none')
       $('#Ingredients').css('display', 'none')
-      $('#CategoriesMeal').css('display', 'none')
-   
+
       $('#Contact').css('display', 'none')
       $('#Instructions').css('display', 'none')
       $('#Contact').css('display', 'none')
@@ -456,14 +451,13 @@ $('.loading').fadeOut(1000);
     else if (chosenLink == '#Contact') {
 
       $('#Contact').css('display', 'block')
-    
+
       $('#Area').css('display', 'none')
       $('#menu').css('display', 'none')
       $('#Ingredients').css('display', 'none')
-      $('#CategoriesMeal').css('display', 'none')
-   
+
       $('#Search').css('display', 'none')
-    
+
       $('#Instructions').css('display', 'none')
 
 
@@ -473,14 +467,13 @@ $('.loading').fadeOut(1000);
       $('#menu').css('display', 'none')
 
       $('#Contact').css('display', 'none')
-     
-    
+
+
       $('#Area').css('display', 'none')
       $('#menu').css('display', 'none')
       $('#Ingredients').css('display', 'none')
-      $('#CategoriesMeal').css('display', 'none')
-   
-    
+
+
       $('#Instructions').css('display', 'none')
 
 
@@ -524,14 +517,32 @@ $('.loading').fadeOut(1000);
 
 function validataNameInput(name) {
 
-  console.log('fg');
+  console.log(name);
 
   let regxName = /[A-Z]?[a-z]{1,8}$/igm;
 
   if (regxName.test(name) == true) {
-    $('#Contact .name').addClass('is-valid');
+    if (document.querySelector('.name').classList.contains('is-invalid')) {
+      document.querySelector('.name').classList.replace('is-invalid', 'is-alid')
+      $('#Contact .name-v').addClass('d-none',()=>{
+        return true;
 
-    return true
+      });
+
+
+
+    }
+    else {
+      document.querySelector('.name').classList.add('is-valid')
+      $('#Contact .name-v').addClass('d-none',()=>{
+        return true;
+
+      });
+
+   
+
+    }
+
   }
   else {
 
@@ -541,7 +552,7 @@ function validataNameInput(name) {
     $('#Contact .name').blur(function (e) {
       $('#Contact .name').val('')
     })
-
+    return false
   }
 
 }
@@ -568,8 +579,27 @@ function validataemailInput(email) {
 
 
   if (regxMail.test(email) == true) {
-    $('#Contact .email').addClass('is-valid');
-    return true
+
+
+    if (document.querySelector('.email').classList.contains('is-invalid')) {
+      document.querySelector('.email').classList.replace('is-invalid', 'is-alid')
+      $('#Contact .email-v').addClass('d-none',()=>{
+        return true;
+
+      });
+
+
+
+    }
+    else {
+      document.querySelector('.email').classList.add('is-valid')
+      $('#Contact .email-v').addClass('d-none',()=>{
+        return true;
+
+      });
+
+      return true
+    }
   } else {
 
     $('#Contact .email').addClass('is-invalid');
@@ -600,8 +630,24 @@ function validatanumberInput(number) {
 
 
   if (regexNumber.test(number) == true) {
-    $('#Contact .number').addClass('is-valid');
-    return true
+    if (document.querySelector('.number').classList.contains('is-invalid')) {
+      document.querySelector('.number').classList.replace('is-invalid', 'is-valid')
+      $('#Contact .number-v').addClass('d-none',()=>{
+        return true;
+
+      });
+
+   
+
+    }
+    else {
+      document.querySelector('.number').classList.add('is-valid')
+      $('#Contact .number-v').addClass('d-none',()=>{
+        return true;
+
+      });
+
+    }
   } else {
 
     $('#Contact .number').addClass('is-invalid');
@@ -614,7 +660,7 @@ function validatanumberInput(number) {
 
 
 
-$('#Contact .number').blur(function (e) {
+$('#Contact .number').keyup(function (e) {
 
   let number = $('#Contact .number').val();
   validatanumberInput(number)
@@ -633,9 +679,26 @@ function validatapasswordInput(password) {
 
 
   if (regxPassword.test(password) == true) {
-    $('#Contact .password').addClass('is-valid');
-    return true
-  } else {
+    if (document.querySelector('.password').classList.contains('is-invalid')) {
+      document.querySelector('.password').classList.replace('is-invalid', 'is-alid')
+      $('#Contact .password-v').addClass('d-none',()=>{
+        return true;
+
+      });
+
+    
+
+    }
+    else {
+      document.querySelector('.password').classList.add('is-valid')
+      $('#Contact .password-v').addClass('d-none',()=>{
+        return true;
+
+      });
+
+    }
+  }
+  else {
 
     $('#Contact .password').addClass('is-invalid');
 
@@ -668,9 +731,27 @@ function validatarepasswordInput(repassword) {
 
 
   if (regxrepassword.test(repassword) == true) {
-    $('#Contact .repassword').addClass('is-valid');
-    return true
-  } else {
+    if (document.querySelector('.repassword').classList.contains('is-invalid')) {
+      document.querySelector('.repassword').classList.replace('is-invalid', 'is-alid')
+      $('#Contact .repassword-v').addClass('d-none',()=>{
+        return true;
+
+      });
+
+     
+
+    }
+    else {
+      document.querySelector('.repassword').classList.add('is-valid')
+      $('#Contact .repassword-v').addClass('d-none',()=>{
+        return true;
+
+      });
+
+      
+    }
+  }
+  else {
 
     $('#Contact .repassword').addClass('is-invalid');
 
@@ -690,23 +771,23 @@ $('#Contact .repassword').blur(function (e) {
 });
 
 
-$('#Contact button').click( ()=>{
-  
-    
-  
-  if (validataNameInput ==true && validataemailInput==true && validatanumberInput==true && validatapasswordInput==true && validatarepasswordInput==true) {
+$('#Contact button').click(() => {
 
-console.log('valid Data');
-    
+
+
+  if (validataNameInput == true && validataemailInput == true && validatanumberInput == true && validatapasswordInput == true && validatarepasswordInput == true) {
+
+    console.log('valid Data');
+
   }
-  
+
   else {
     $('#Contact .valid').removeClass('d-none');
-   
+
     $('#Contact button').attr('disabled');
 
   }
 
-  
+
 });
 
